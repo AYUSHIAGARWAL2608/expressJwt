@@ -1,6 +1,5 @@
 'use strict';
 
-
 // Define schema
 let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
@@ -10,7 +9,7 @@ let AutoIncrement = require('mongoose-sequence')(mongoose);
 let userSchema = new Schema({
     id: { type: Number },
     username: { type: String, index: 'text' },
-    password: { type: String },
+    password: { type: String, min: 5 },
     name: { type: String, default: 'enter you name' },
     age: { type: Number, min: 15, index: true },
     bio: { type: String, match: /[a-z]/ },
