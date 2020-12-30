@@ -17,7 +17,7 @@ let authentication = (req, res, next) => {
         jwt.verify(token, config.secret,
             (err, decoded) => {
                 if (err) {
-                    return res.status(401).send({ success: false, message: Message.demo.auth.authFailed, tokenAuthorization: false })
+                    return res.status(401).send({ success: false, message: MESSAGE.auth.authFailed, tokenAuthorization: false })
                 } else {
                     // save request decoded data for other routes
                     req.decoded = decoded;
@@ -28,7 +28,7 @@ let authentication = (req, res, next) => {
         //return error when no token is provided.
         return res.status(403).send({
             success: false,
-            message: Message.demo.auth.noToken
+            message: MESSAGE.auth.noToken
         });
     }
 }
