@@ -8,7 +8,7 @@ let controller              =               require('../controller');
 
 /**********************************Unsecure Routes*****************************************/
 
-// apiRoutes               .post               ('/login',                      controller.user.login);
+apiRoutes               .post               ('/login',                      controller.user.login);
 apiRoutes               .post               ('/register',                   controller.user.register);
 
 
@@ -18,8 +18,8 @@ apiRoutes               .use(                                               cont
 
 
 /***********************************Secure Routes*******************************************/
-// apiRoutes               .get                ('/user',                       controller.user.list);
-// apiRoutes               .get                ('/profile',                    controller.user.profile);
+apiRoutes               .get                ('/userslist',                  controller.user.list);
+apiRoutes               .get                ('/profile',                    controller.user.profile);
 
 
 

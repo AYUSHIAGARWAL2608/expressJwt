@@ -13,3 +13,10 @@ module.exports.hash = (password, callback) => {
         });
 };
 
+module.exports.checkHashPassword = (password, hash, callback) => {
+    bcrypt.compare(password, hash,
+        (err, res) => {
+            callback(err, res);
+        });
+};
+
