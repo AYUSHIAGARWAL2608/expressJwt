@@ -27,9 +27,11 @@
   },
   "homepage": "https://github.com/AYUSHIAGARWAL2608/expressJwt#readme",
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "config": "^3.3.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.9",
     "mongoose-sequence": "^5.3.0",
     "require-directory": "^2.1.1",

@@ -1,5 +1,7 @@
 {
   "port": "3000",
-  "database": "mongodb+srv://hestabit:hestabit@cluster0.03vzn.mongodb.net/demoProject?retryWrites=true&w=majority",
-  "secret": "expressjwtDemoModule"
+  "database": "mongodb+srv://ayushi:hrhk@cluster0.03vzn.mongodb.net/demoProject?retryWrites=true&w=majority",
+  "secret": "expressjwtDemoModule",
+  "tokenDuration": "90d"
+
 }
