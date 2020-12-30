@@ -1,16 +1,12 @@
 'use strict';
 
-
 const jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
 const config = require('config'); // get our config file
 const MESSAGE = require('../messages/message');
 
-
 let authentication = (req, res, next) => {
-
     // check post or url or header parameter for token verififation.
     const token = req.body.token || req.query.token || req.headers['x-access-token'];
-
     // decoded token
     if (token) {
         // verify secret key and 

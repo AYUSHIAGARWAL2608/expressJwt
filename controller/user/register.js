@@ -1,5 +1,4 @@
 'use strict';
-
 // register a user using email and password
 let userModel = require('../../models/user');
 const jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
@@ -24,7 +23,6 @@ let checkUserExist = (req, res, next) => {
 }
 
 let genrateHashPassword = (req, res, next) => {
-
     utility.hash(req.body.password, (err, hashPassword) => {
         if (err) {
             return res.status(400).json({ success: false, isError: true, error: err });
@@ -71,9 +69,7 @@ let generateToken = (req, res) => {
     const token = jwt.sign(payload, config.secret, {
         expiresIn: config.tokenDuration // expires in 24 hours
     });
-
     delete req.data.createdUser.password;
-
     // return the information including token as JSON
     res.status(200).json({
         success: true,
@@ -81,9 +77,7 @@ let generateToken = (req, res) => {
         token: token,
         user: req.data.createdUser,
     });
-
 }
-
 
 module.exports = [
     checkUserExist,

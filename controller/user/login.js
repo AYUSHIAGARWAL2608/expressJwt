@@ -60,7 +60,6 @@ let generateToken = (req, res) => {
         token: token,
         user: req.data.user
     });
-
 }
 
 module.exports = [
