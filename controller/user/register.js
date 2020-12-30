@@ -4,6 +4,7 @@ let userModel = require('../../models/user');
 const jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
 const config = require('config'); // get our config file
 const utility = require('../../utility/utility');
+const { validationResult } = require('express-validator');
 
 let checkUserExist = (req, res, next) => {
     userModel.find(
@@ -35,6 +36,11 @@ let genrateHashPassword = (req, res, next) => {
 }
 
 let createUser = (req, res, next) => {
+     // Finds the validation errors in this request and wraps them in an object with handy functions
+    const errors = validationResult(req)
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() })
+    }  
     let user = req.body;
     let userPayload = {
         username: user.username,
