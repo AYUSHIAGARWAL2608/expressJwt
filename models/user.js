@@ -2,17 +2,22 @@
 
 
 // Define schema
-let Schema = mongoose.Schema;
 let mongoose = require('mongoose');
+let Schema = mongoose.Schema;
 let AutoIncrement = require('mongoose-sequence')(mongoose);
 
 
 let userSchema = new Schema({
-    name: { type: String, default: 'Ayushi' },
-    age: { type: Number, min: 18, index: true },
+    id: { type: Number },
+    username: { type: String, index: 'text' },
+    password: { type: String },
+    name: { type: String, default: 'enter you name' },
+    age: { type: Number, min: 15, index: true },
     bio: { type: String, match: /[a-z]/ },
-    created: { type: Date, default: Date.now },
-    updated: { type: Date, default: Date.now },
+    dob: { type: Date },
+    imageUrl: { type: String, default: 'profile.png' },
+    created: Date,
+    updated: Date,
 });
 
 // set up a mongoose model and pass it using module.exports
