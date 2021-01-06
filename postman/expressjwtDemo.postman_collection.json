@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "714afb43-dfd7-442b-9b91-a9a487f51fb9",
+		"name": "expressjwtDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImF5dXNoaUBnbWFpbC5jb20iLCJfaWQiOiI1ZmJhOThlOTVlM2JmZjEyODNjZWUwMjQiLCJpZCI6MTQsImlhdCI6MTYwNjA2NDM2MiwiZXhwIjoxNjA2MDY0NDIyfQ.5p8oaSXO1FdmMQhthsISFF9vxeEB0r7dZ_QGE6DSzgU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "ayushi@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234abc",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Ayushi",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "bio",
+									"value": "abctiuiuuiotyughfhcfh",
+									"type": "text"
+								},
+								{
+									"key": "dob",
+									"value": "2020-12-30",
+									"type": "text"
+								},
+								{
+									"key": "imageUrl",
+									"value": "https://www.asiamediajournal.com/wp-content/uploads/2020/12/Happy-New-Year-2021-Wallpapers.jpg",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImF5dXNoaSIsIl9pZCI6IjVmZWMzZTM2Yzg3MzBlMzgxNmExNzFlOCIsImlkIjo0LCJpYXQiOjE2MDkzMTc5NDUsImV4cCI6MTYxNzA5Mzk0NX0.dcjlRFW_11hQZrUmFSYq8lUr20FeK-QhUGMoHt7bdOI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImF5dXNoaSIsIl9pZCI6IjVmZWMzZTM2Yzg3MzBlMzgxNmExNzFlOCIsImlkIjo0LCJpYXQiOjE2MDkzMTc5NDUsImV4cCI6MTYxNzA5Mzk0NX0.dcjlRFW_11hQZrUmFSYq8lUr20FeK-QhUGMoHt7bdOI",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "ayushi",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImF5dXNoaSIsIl9pZCI6IjVmZWMzZTM2Yzg3MzBlMzgxNmExNzFlOCIsImlkIjo0LCJpYXQiOjE2MDkzMTc5NDUsImV4cCI6MTYxNzA5Mzk0NX0.dcjlRFW_11hQZrUmFSYq8lUr20FeK-QhUGMoHt7bdOI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/userslist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"userslist"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
