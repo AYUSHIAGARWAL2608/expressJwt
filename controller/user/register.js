@@ -36,16 +36,19 @@ let genrateHashPassword = (req, res, next) => {
 }
 
 let createUser = (req, res, next) => {
-     // Finds the validation errors in this request and wraps them in an object with handy functions
+    // Finds the validation errors in this request and wraps them in an object with handy functions
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() })
-    }  
+        return res.status(400).json({ errors: errors.array() })
+    }
     let user = req.body;
     let userPayload = {
         username: user.username,
         password: req.data.hashPassword,
         name: user.name,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        emailId: user.emailId,
         age: user.age,
         bio: user.bio,
         dob: user.dob,

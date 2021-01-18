@@ -2,6 +2,7 @@
 
 const express = require('express')
 const app = express()
+const cors = require('cors');
 let mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 require('./database/database');
@@ -18,6 +19,7 @@ app.get('/', (req, res) => {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.use(cors());
 
 // apply the routes to our application with the prefix /api
 app.use('/api', routes);
