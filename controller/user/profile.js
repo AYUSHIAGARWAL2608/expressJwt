@@ -1,10 +1,11 @@
 'use strict';
 
 let userModel = require('../../models/user');
+let mongoose = require('mongoose');
 
 let getUserDetail = (req, res) => {
     let conditions = {
-        "_id": req.decoded._id,
+        _id: mongoose.Types.ObjectId(req.params.userId)
     }
     userModel.findOne(
         conditions,

@@ -9,12 +9,15 @@ let validations                     =               require('../validations');
 
 apiRoutes         .post     ('/login',                                              controller.user.login);
 apiRoutes         .post     ('/register',       validations.user.register,          controller.user.register);
+// apiRoutes         .post     ('/register',                                           controller.user.register);
 
 // Middleware function for auth token
-apiRoutes         .use(                                                             controller.authentication);
+// apiRoutes         .use(                                                             controller.authentication);
 
 /***********************************Secure Routes*******************************************/
 apiRoutes         .get      ('/userslist',                                          controller.user.list);
-apiRoutes         .get      ('/profile',                                            controller.user.profile);
+apiRoutes         .get      ('/user/:userId',                                       controller.user.profile);
+apiRoutes         .put      ('/user/:userId',                                       controller.user.edit);
+apiRoutes         .delete   ('/user/:userId',                                       controller.user.delete);
 
 module.exports                      =               apiRoutes;
